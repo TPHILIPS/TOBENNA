@@ -42,29 +42,29 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+20.127.132.122
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by Jumpbox and the Load balancer
+-The machines that have access to the ELK server are the web-1 and web-2 server and the ip address of the ELK server is 10.1.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
-
+|  Web-1   |    No              |  10.1.0.7                    |
+|  Web-2   |   No               | 10.1.0.8                     |
+|   ELK-server      |  No      |     10.1.0.4                |
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
-
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous 
+- because it eliminates the chance of human error and can simplify the process of configuring potentially thousands of machines identically all at once.
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+Installed Docker and Ansible on the Jumpbox machine, enabling playbook automation to push software services to other machines
+Added ELK VM to Hosts file under a separate Group header (elk)
+Run Playbook file via ansible-playbook command, therefore pushing tasks to all machines assigned/configured to receive
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
