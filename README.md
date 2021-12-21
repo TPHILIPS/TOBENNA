@@ -45,8 +45,8 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 20.127.132.122
 
-Machines within the network can only be accessed by Jumpbox and the Load balancer
--The machines that have access to the ELK server are the web-1 and web-2 server and the ip address of the ELK server is 10.1.0.4
+Machines within the network can only be accessed by Jumpbox,Elk server and the Load balancer
+-The machines that have access to the ELK server are the web-1 and web-2 server and the ip address of the ELK server is 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -55,7 +55,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes            | 20.127.132.122    |
 |  Web-1   |    No              |  10.1.0.7                    |
 |  Web-2   |   No               | 10.1.0.8                     |
-|   ELK-server      |  No      |     10.0.0.4                |
+|   ELK-server      |  No      |     104.40.87.149 for public, while private is 10.0.0.4               |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous 
